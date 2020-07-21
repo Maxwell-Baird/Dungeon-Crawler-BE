@@ -1,0 +1,62 @@
+[
+  {
+    "model": "dungeon.npc",
+    "pk": 1,
+    "fields":{
+      "id": 1,
+      "name": "squid",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [
+        {"type": "attack"}],
+        "location": "Forest"
+    }
+  },
+  {
+    "model": "dungeon.npc",
+    "pk": 2,
+    "fields":{
+      "id": 2,
+      "name": "Goblin",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [
+        {"type": "attack"}],
+        "location": "Forest"
+    }
+  },
+  {
+    "model": "dungeon.npc",
+    "pk": 3,
+    "fields":{
+      "id": 3,
+      "name": "Bear",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [
+        {"type": "attack"}],
+        "location": "Forest"
+    }
+  },
+  {
+    "model": "dungeon.npc",
+    "pk": 4,
+    "fields":{
+      "id": 4,
+      "name": "Wolf",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [
+        {"type": "attack"}],
+        "location": "Forest"
+    }
+  }
+]
