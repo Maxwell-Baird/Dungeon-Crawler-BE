@@ -19,7 +19,17 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
 python get-pip.py
 
+pip install django
+
+pip install djangorestframework
+
+pip install django-cors-headers
+
 pip install psycopg2-binary
+
+python manage.py makemigration
+
+python manage.py migrate
 
 python manage.py loaddata fixtures/npc.json
 
