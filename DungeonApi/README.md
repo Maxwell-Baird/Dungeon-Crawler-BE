@@ -9,6 +9,8 @@ start server: python manage.py runserver 8000
 ## Setup
 download python: https://www.python.org/downloads/
 
+create a database in postgres called dungeoncrawler
+
 python3 -m venv env
 
 source env/bin/activate 
