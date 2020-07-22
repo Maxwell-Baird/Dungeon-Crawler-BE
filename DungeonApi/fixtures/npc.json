@@ -9,9 +9,8 @@
       "defense": 5,
       "health": 10,
       "dialogue": {"path": "help"},
-      "options": [
-        {"type": "attack"}],
-        "location": "Beach"
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "location": "Beach"
     }
   },
   {
@@ -24,8 +23,7 @@
       "defense": 5,
       "health": 10,
       "dialogue": {"path": "help"},
-      "options": [
-        {"type": "attack"}],
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
       "location": "Caves"
     }
   },
@@ -39,8 +37,7 @@
       "defense": 5,
       "health": 10,
       "dialogue": {"path": "help"},
-      "options": [
-        {"type": "attack"}],
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
       "location": "Forest"
     }
   },
@@ -54,8 +51,7 @@
       "defense": 5,
       "health": 10,
       "dialogue": {"path": "help"},
-      "options": [
-        {"type": "attack"}],
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
       "location": "Caves"
     }
   }
