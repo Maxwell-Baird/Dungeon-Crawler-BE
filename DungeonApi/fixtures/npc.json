@@ -4,14 +4,14 @@
     "pk": 1,
     "fields":{
       "id": 1,
-      "name": "squid",
+      "name": "Squid",
       "attack": 5,
       "defense": 5,
       "health": 10,
       "dialogue": {"path": "help"},
       "options": [
         {"type": "attack"}],
-        "location": "Forest"
+        "location": "Beach"
     }
   },
   {
@@ -26,7 +26,7 @@
       "dialogue": {"path": "help"},
       "options": [
         {"type": "attack"}],
-        "location": "Forest"
+      "location": "Caves"
     }
   },
   {
@@ -41,7 +41,7 @@
       "dialogue": {"path": "help"},
       "options": [
         {"type": "attack"}],
-        "location": "Forest"
+      "location": "Forest"
     }
   },
   {
@@ -56,7 +56,7 @@
       "dialogue": {"path": "help"},
       "options": [
         {"type": "attack"}],
-        "location": "Forest"
+      "location": "Caves"
     }
   }
 ]
