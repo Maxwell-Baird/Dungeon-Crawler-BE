@@ -1,0 +1,58 @@
+[
+  {
+    "model": "dungeon.npc",
+    "pk": 1,
+    "fields":{
+      "id": 1,
+      "name": "Squid",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "location": "Beach"
+    }
+  },
+  {
+    "model": "dungeon.npc",
+    "pk": 2,
+    "fields":{
+      "id": 2,
+      "name": "Goblin",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "location": "Caves"
+    }
+  },
+  {
+    "model": "dungeon.npc",
+    "pk": 3,
+    "fields":{
+      "id": 3,
+      "name": "Bear",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "location": "Forest"
+    }
+  },
+  {
+    "model": "dungeon.npc",
+    "pk": 4,
+    "fields":{
+      "id": 4,
+      "name": "Wolf",
+      "attack": 5,
+      "defense": 5,
+      "health": 10,
+      "dialogue": {"path": "help"},
+      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "location": "Caves"
+    }
+  }
+]
