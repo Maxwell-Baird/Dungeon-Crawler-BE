@@ -39,3 +39,11 @@ python manage.py runserver 8000
 /api/v1/npcs for all npcs
 
 /api/v1/npcs/1 for a single npc (change the number to get a different npc)
+
+## Running the server commands if you restarted
+
+python3 -m venv env
+
+source env/bin/activate 
+
+python manage.py runserver 8000
