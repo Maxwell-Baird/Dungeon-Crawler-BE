@@ -13,4 +13,5 @@ class NpcSerializer(serializers.ModelSerializer):
                   'health',
                   'dialogue',
                   'options',
-                  'location')
+                  'location',
+                  'description')
