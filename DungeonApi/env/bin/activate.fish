@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/maxwellbaird/turing/module4/dungeon-crawler/Dungeon-Crawler-BE/DungeonApi/env"
+set -gx VIRTUAL_ENV "/Users/rubyr/turing/4module/untitled-dungeon-crawler/be/DungeonApi/env"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

@@ -8,7 +8,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/Users/maxwellbaird/turing/module4/dungeon-crawler/Dungeon-Crawler-BE/DungeonApi/env"
+setenv VIRTUAL_ENV "/Users/rubyr/turing/4module/untitled-dungeon-crawler/be/DungeonApi/env"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

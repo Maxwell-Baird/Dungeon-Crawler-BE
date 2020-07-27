@@ -1,4 +1,4 @@
-#!/Users/maxwellbaird/turing/module4/dungeon-crawler/Dungeon-Crawler-BE/DungeonApi/env/bin/python
+#!/Users/rubyr/turing/4module/untitled-dungeon-crawler/be/DungeonApi/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
