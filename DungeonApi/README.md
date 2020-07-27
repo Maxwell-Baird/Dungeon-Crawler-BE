@@ -13,7 +13,7 @@ create a database in postgres called dungeoncrawler
 
 python3 -m venv env
 
-source env/bin/activate 
+source env/bin/activate
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 
@@ -44,6 +44,23 @@ python manage.py runserver 8000
 
 python3 -m venv env
 
-source env/bin/activate 
+source env/bin/activate
 
 python manage.py runserver 8000
+
+## Resetting the database
+$ python manage.py dumpdata
+
+$ psql -U postgres
+
+postgres=# drop database dungeoncrawler;
+
+postgres=# create database dungeoncrawler;
+
+postgres=# \q
+
+$ python manage.py makemigration
+
+$ python manage.py migrate
+
+$ python manage.py loaddata fixtures/npc.json

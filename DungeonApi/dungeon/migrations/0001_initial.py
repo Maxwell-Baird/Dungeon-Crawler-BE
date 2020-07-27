@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('attack', models.PositiveIntegerField(default=5)),
                 ('defense', models.PositiveIntegerField(default=5)),
                 ('health', models.PositiveIntegerField(default=10)),
-                ('dialogue', django.contrib.postgres.fields.jsonb.JSONField()),
+                ('dialogue', django.contrib.postgres.fields.ArrayField(base_field=django.contrib.postgres.fields.jsonb.JSONField(), size=None)),
                 ('options', django.contrib.postgres.fields.ArrayField(base_field=django.contrib.postgres.fields.jsonb.JSONField(), size=None)),
             ],
         ),

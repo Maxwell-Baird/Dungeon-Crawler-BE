@@ -7,6 +7,7 @@ class Npc(models.Model):
     attack = models.PositiveIntegerField(blank=False, default=5)
     defense = models.PositiveIntegerField(blank=False, default=5)
     health = models.PositiveIntegerField(blank=False, default=10)
-    dialogue = JSONField()
+    dialogue = ArrayField(JSONField())
     options = ArrayField(JSONField())
     location = models.CharField(max_length=70, blank=False, default='')
+    description = models.CharField(max_length=256, blank=False, default='Its a thing')
