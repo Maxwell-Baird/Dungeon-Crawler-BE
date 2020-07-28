@@ -1,12 +1,12 @@
 from django.test import RequestFactory, TestCase
-# Create your tests here.
+from rest_framework.test import APIRequestFactory
 from .views import *
 from .models import *
 
 class SimpleTest(TestCase):
     def setUp(self):
-        self.factory = RequestFactory()
-        Npc.objects.create(
+        self.factory = APIRequestFactory()
+        npc = Npc.objects.create(
             name = "Squid",
             attack = 5,
             defense = 5,
@@ -57,6 +57,7 @@ class SimpleTest(TestCase):
     def test_npc_list_post(self):
         self.assertEqual(Npc.objects.count(), 1)
         data = {
+          "id": 2,
           "name": "Bear",
           "attack": 5,
           "defense": 5,
@@ -97,9 +98,35 @@ class SimpleTest(TestCase):
           "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
           "location": "Forest"
         }
-        request = self.factory.post('/api/v1/npcs', data, content_type='application/json')
+        request = self.factory.post('/api/v1/npcs', data, format='json')
 
         response = npc_list(request)
 
         self.assertEqual(response.status_code, 201)
         self.assertEqual(Npc.objects.count(), 2)
+
+    def test_npc_detail_get(self):
+
+        request = self.factory.get('/api/v1/npcs/2')
+
+        response = npc_detail(request, 2)
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_npc_detail_get_fail(self):
+        request = self.factory.get('/api/v1/npcs/5')
+
+        response = npc_detail(request, 5)
+
+        self.assertEqual(response.status_code, 404)
+
+
+    def test_npc_detail_delete(self):
+        self.assertEqual(Npc.objects.count(), 1)
+
+        request = self.factory.delete('/api/v1/npcs/1')
+
+        response = npc_detail(request, 1)
+
+        self.assertEqual(response.status_code, 204)
+        self.assertEqual(Npc.objects.count(), 0)
