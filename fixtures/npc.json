@@ -2,184 +2,126 @@
   {
     "model": "dungeon.npc",
     "pk": 1,
-    "fields":{
+    "fields": {
       "id": 1,
       "name": "Squid",
-      "attack": 5,
-      "defense": 5,
-      "health": 10,
-      "description": "It is red and orange. 5000 feet tall and hates pineapples.",
+      "attack": 7,
+      "defense": 2,
+      "health": 15,
+      "description": "You walk down to the beach and upon your arrival, see a massive squid washed ashore. Its tentacles flail about wildly, looking for something - someone - to grasp. It spots you and begins to flop its way over to you. You feel a cold run down your back.",
       "dialogue": [
         {
-          "dialogue": "how are you",
-          "response": "good",
-          "choices": [1, 2, 3]
-        },{
-          "dialogue": "nice weather today",
-          "response": "sure is!",
-          "choices": [0, 2, 3]
-        },{
-          "dialogue": "what are you up to",
-          "response": "fetching water",
-          "choices": [4]
-        },{
-          "dialogue": "can you heal me?",
-          "response": "yeah!",
-          "action": "heal",
-          "choices": [0, 1, 2]
-        },{
-          "dialogue": "can I help?",
-          "response": "no, but wanna join my wizardry school?",
-          "choices": [5, 6]
-        },{
-          "dialogue": "sure!",
-          "response": "great!",
-          "choices": [0, 1, 3]
-        },{
-          "dialogue": "not really!",
-          "response": "aw, ok!",
-          "choices": [0, 1, 3]
+          "dialogue": "Introduce yourself",
+          "response": "You shout a \"Hello\" towards the squid. It still approaches you. Why did you think you could talk to a squid?",
+          "choices": [1]
+        },
+        {
+          "dialogue": "Ask it where it came from",
+          "response": "The squid stops and ponders your question for a moment, before going right back to throwing itself at you. You feel quite dumb in your attempts.",
+          "choices": [0]
         }
       ],
-      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "options": [
+        { "name": "Fight", "type": "aggressive" },
+        { "name": "Talk", "type": "passive" }
+      ],
       "location": "Beach"
     }
   },
   {
     "model": "dungeon.npc",
     "pk": 2,
-    "fields":{
+    "fields": {
       "id": 2,
       "name": "Goblin",
       "attack": 5,
-      "defense": 5,
-      "health": 10,
-      "description": "It is small, smelly, and likes to eat rocks",
+      "defense": 6,
+      "health": 20,
+      "description": "You barely set foot inside the cave before you see a goblin stumbling out. His beady, black eyes study you up and down before he bursts out with a quick,\n\"What do you want?\"\nHe seems as if he's trying to be intimidating. He is not doing a very good job.",
       "dialogue": [
         {
-          "dialogue": "how are you",
-          "response": "good",
+          "dialogue": "Introduce yourself",
+          "response": "You tell the goblin your name and begin to tell it why you are here, before stopping. Why are you here? The goblin takes the opportunity to sit down. \"Hi, I'm a goblin.\" He isn't pleased with your presence.",
           "choices": [1, 2, 3]
-        },{
-          "dialogue": "nice weather today",
-          "response": "sure is!",
-          "choices": [0, 2, 3]
-        },{
-          "dialogue": "what are you up to",
-          "response": "fetching water",
-          "choices": [4]
-        },{
-          "dialogue": "can you heal me?",
-          "response": "yeah!",
-          "action": "heal",
-          "choices": [0, 1, 2]
-        },{
-          "dialogue": "can I help?",
-          "response": "no, but wanna join my wizardry school?",
-          "choices": [5, 6]
-        },{
-          "dialogue": "sure!",
-          "response": "great!",
+        },
+        {
+          "dialogue": "Announce its swift demise to it before attacking it",
+          "response": "The goblin seems visibly upset by your response. \"My pronouns are he and him, not it.\" He takes a fighting stance.",
+          "action": "fight"
+        },
+        {
+          "dialogue": "Ask what it's doing here",
+          "response": "The goblin gets upset and shouts, \"This is my home. What are you doing here?\" You are stunned by the question.",
           "choices": [0, 1, 3]
-        },{
-          "dialogue": "not really!",
-          "response": "aw, ok!",
-          "choices": [0, 1, 3]
+        },
+        {
+          "dialogue": "Tell the goblin about your quest",
+          "response": "You proudly announce to the goblin, \"I'm on a quest!\" The goblin looks you over and asks, \"What kind of quest?\" You are yet again at a loss for words over his inquiry.",
+          "choices": [1, 2]
         }
       ],
-      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "options": [
+        { "name": "Fight", "type": "aggressive" },
+        { "name": "Talk", "type": "passive" }
+      ],
       "location": "Caves"
     }
   },
   {
     "model": "dungeon.npc",
     "pk": 3,
-    "fields":{
+    "fields": {
       "id": 3,
       "name": "Bear",
-      "attack": 5,
+      "attack": 8,
       "defense": 5,
-      "health": 10,
-      "description": "Oh, crap you woke a bear up from hibernation!!!!",
+      "health": 12,
+      "description": "You wander through the forest until you come across a bear, sleeping near a tree. You realize it is a bear a moment too late, and it awakes at your presence. \nIt seems tired and annoyed that you woke it up. ",
       "dialogue": [
         {
-          "dialogue": "how are you",
-          "response": "good",
-          "choices": [1, 2, 3]
-        },{
-          "dialogue": "nice weather today",
-          "response": "sure is!",
-          "choices": [0, 2, 3]
-        },{
-          "dialogue": "what are you up to",
-          "response": "fetching water",
-          "choices": [4]
-        },{
-          "dialogue": "can you heal me?",
-          "response": "yeah!",
-          "action": "heal",
-          "choices": [0, 1, 2]
-        },{
-          "dialogue": "can I help?",
-          "response": "no, but wanna join my wizardry school?",
-          "choices": [5, 6]
-        },{
-          "dialogue": "sure!",
-          "response": "great!",
-          "choices": [0, 1, 3]
-        },{
-          "dialogue": "not really!",
-          "response": "aw, ok!",
-          "choices": [0, 1, 3]
+          "dialogue": "Apologize for waking it",
+          "response": "You back away and apologize to the bear for disturbing it. It looks at you and mumbles about working 18 hours a day before laying back down. You breathe a sigh and wander onwards.",
+          "action": "end"
+        },
+        {
+          "dialogue": "Ignore the bear and leave",
+          "response": "You turn the other way and begin to leave the bear alone. Before you can take two steps, you feel a fuzzy paw on your shoulder spin you around. \"Hey buddy,\" the bear says, \"I don't work my ass off for 18 hours a day for kids like you to walk around and wake me up when I'm trying to get the little sleep I can.\"",
+          "choices": [0, 2]
+        },
+        {
+          "dialogue": "Rudely apologize",
+          "response": "You sneer at the bear and give a sarcastic \"sorry.\" The bear becomes visibly enraged and begins to attack you. ",
+          "action": "fight"
         }
       ],
-      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "options": [
+        { "name": "Fight", "type": "aggressive" },
+        { "name": "Talk", "type": "passive" }
+      ],
       "location": "Forest"
     }
   },
   {
     "model": "dungeon.npc",
     "pk": 4,
-    "fields":{
+    "fields": {
       "id": 4,
       "name": "Wolf",
-      "attack": 5,
-      "defense": 5,
+      "attack": 4,
+      "defense": 8,
       "health": 10,
-      "description": "Its a wolf. Nothing more nothing less",
+      "description": "You wander into the caverns, marelling at the high ceilings and huge stalagmites formed over thousands of years. While studying one, you spot a dash of grey fur behind it. Suddenly a large wolf jumps out, its eyes filled with distrust and fear. ",
       "dialogue": [
         {
-          "dialogue": "how are you",
-          "response": "good",
-          "choices": [1, 2, 3]
-        },{
-          "dialogue": "nice weather today",
-          "response": "sure is!",
-          "choices": [0, 2, 3]
-        },{
-          "dialogue": "what are you up to",
-          "response": "fetching water",
-          "choices": [4]
-        },{
-          "dialogue": "can you heal me?",
-          "response": "yeah!",
-          "action": "heal",
-          "choices": [0, 1, 2]
-        },{
-          "dialogue": "can I help?",
-          "response": "no, but wanna join my wizardry school?",
-          "choices": [5, 6]
-        },{
-          "dialogue": "sure!",
-          "response": "great!",
-          "choices": [0, 1, 3]
-        },{
-          "dialogue": "not really!",
-          "response": "aw, ok!",
-          "choices": [0, 1, 3]
+          "dialogue": "Say hello",
+          "response": "You have time to let out a single \"Hello\" before the wolf jumps at you and begins to fight you.",
+          "action": "fight"
         }
       ],
-      "options": [{"name": "Fight", "type": "aggressive"}, {"name": "Talk", "type": "passive"}],
+      "options": [
+        { "name": "Fight", "type": "aggressive" },
+        { "name": "Talk", "type": "passive" }
+      ],
       "location": "Caves"
     }
   }
