@@ -1,5 +1,6 @@
 from django.test import RequestFactory, TestCase
 from rest_framework.test import APIRequestFactory
+
 from .views import *
 from .models import *
 
@@ -7,6 +8,7 @@ class SimpleTest(TestCase):
     def setUp(self):
         self.factory = APIRequestFactory()
         npc = Npc.objects.create(
+            id = 100,
             name = "Squid",
             attack = 5,
             defense = 5,
@@ -53,6 +55,21 @@ class SimpleTest(TestCase):
         response = npc_list(request)
 
         self.assertEqual(response.status_code, 200)
+
+
+
+    def test_npc_list_post_fail(self):
+      data = {
+              "id": 2,
+              "name": "Bear",
+              "attack": 5,
+              "defense": 5,
+              "health": 10}
+      request = self.factory.post('/api/v1/npcs', data, format='json')
+
+      response = npc_list(request)
+
+      self.assertEqual(response.status_code, 400)
 
     def test_npc_list_post(self):
         self.assertEqual(Npc.objects.count(), 1)
@@ -107,9 +124,9 @@ class SimpleTest(TestCase):
 
     def test_npc_detail_get(self):
 
-        request = self.factory.get('/api/v1/npcs/2')
+        request = self.factory.get('/api/v1/npcs/100')
 
-        response = npc_detail(request, 2)
+        response = npc_detail(request, 100)
 
         self.assertEqual(response.status_code, 200)
 
@@ -120,13 +137,44 @@ class SimpleTest(TestCase):
 
         self.assertEqual(response.status_code, 404)
 
+    def test_npc_detail_put(self):
+        data = {
+            	"name": "squid",
+            	"dialogue": [{"text": "text"}],
+            	"options": [{"text": "text"}]
+                }
+        request = self.factory.put('/api/v1/npcs/100', data, format='json')
+
+        response = npc_detail(request, 100)
+
+        self.assertEqual(response.status_code, 202)
+
+    def test_npc_detail_put_fail(self):
+        data = {
+            	"name": "squid"
+                }
+
+        request = self.factory.put('/api/v1/npcs/100', data, format='json')
+        response = npc_detail(request, 100)
+
+        self.assertEqual(response.status_code, 400)
 
     def test_npc_detail_delete(self):
         self.assertEqual(Npc.objects.count(), 1)
 
-        request = self.factory.delete('/api/v1/npcs/1')
+        request = self.factory.delete('/api/v1/npcs/100')
 
-        response = npc_detail(request, 1)
+        response = npc_detail(request, 100)
+
+        self.assertEqual(response.status_code, 204)
+        self.assertEqual(Npc.objects.count(), 0)
+
+    def test_npc_list_get_delete(self):
+        self.assertEqual(Npc.objects.count(), 1)
+
+        request = self.factory.delete('/api/v1/npcs')
+
+        response = npc_list(request)
 
         self.assertEqual(response.status_code, 204)
         self.assertEqual(Npc.objects.count(), 0)

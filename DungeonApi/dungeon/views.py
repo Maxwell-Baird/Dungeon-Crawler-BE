@@ -44,7 +44,7 @@ def npc_detail(request, pk):
         npc_serializer = NpcSerializer(npc, data=npc_data)
         if npc_serializer.is_valid():
             npc_serializer.save()
-            return JsonResponse(npc_serializer.data)
+            return JsonResponse(npc_serializer.data, status=status.HTTP_202_ACCEPTED)
         return JsonResponse(npc_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
         npc.delete()
