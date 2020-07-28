@@ -1,4 +1,5 @@
-from django.test import RequestFactory, TestCase
+from django.test import RequestFactory, TestCase, Client
+from django.urls import reverse
 from rest_framework.test import APIRequestFactory
 
 from .views import *
@@ -50,11 +51,14 @@ class SimpleTest(TestCase):
         )
 
     def test_npc_list_get(self):
-        request = self.factory.get('/api/v1/npcs')
+        client = Client()
+        response = client.get(reverse('all_npcs'))
 
-        response = npc_list(request)
+        npcs = Npc.objects.all()
+        serializer = NpcSerializer(npcs, many=True)
 
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data, serializer.data)
 
 
 
@@ -128,7 +132,11 @@ class SimpleTest(TestCase):
 
         response = npc_detail(request, 100)
 
+        npc = Npc.objects.get(pk=100)
+        serializer = NpcSerializer(npc)
+
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data, serializer.data)
 
     def test_npc_detail_get_fail(self):
         request = self.factory.get('/api/v1/npcs/5')
@@ -138,15 +146,25 @@ class SimpleTest(TestCase):
         self.assertEqual(response.status_code, 404)
 
     def test_npc_detail_put(self):
+        inital = self.factory.get('/api/v1/npcs/100')
+        inital_response = npc_detail(inital, 100)
+
+        npc = Npc.objects.get(pk=100)
+        serializer = NpcSerializer(npc)
+
+        self.assertEqual("Squid", serializer.data["name"])
+        self.assertEqual(inital_response.data["name"], serializer.data["name"])
+
         data = {
-            	"name": "squid",
+            	"name": "Cheese Monkey",
             	"dialogue": [{"text": "text"}],
             	"options": [{"text": "text"}]
                 }
-        request = self.factory.put('/api/v1/npcs/100', data, format='json')
 
+        request = self.factory.put('/api/v1/npcs/100', data, format='json')
         response = npc_detail(request, 100)
 
+        self.assertEqual("Cheese Monkey", response.data["name"])
         self.assertEqual(response.status_code, 202)
 
     def test_npc_detail_put_fail(self):
