@@ -1,15 +1,15 @@
 language: python
-  python:
-    - "2.7"
-    - "3.4"
-    - "3.5"
-    - "3.6"      # current default Python on Travis CI
-    - "3.7"
-    - "3.8"
-    - "3.8-dev"  # 3.8 development branch
-    - "nightly"  # nightly build
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"      
+  - "3.7"
+  - "3.8"
+  - "3.8-dev"
+  - "nightly"
 
-  install:
-    - pip install -r requirements.txt 
-  script: # => 7
-      - python manage.py test
+install:
+  - pip install -r requirements.txt
+script:
+  - python manage.py test
