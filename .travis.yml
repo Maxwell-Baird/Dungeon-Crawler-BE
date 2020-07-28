@@ -3,10 +3,14 @@ python:
   - "3.8"
 services:
   - postgresql
-  
+
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
 install:
   - pip install -r requirements.txt
 script:
   - python manage.py test
+deploy:
+  provider: heroku
+  api_key: 25b335cd-fb7c-4095-9093-84fdd72efa91
+  app: whispering-temple-46123
