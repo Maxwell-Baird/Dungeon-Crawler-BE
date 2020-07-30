@@ -18,7 +18,7 @@ To setup the project you will need to have python 3.8, get-pip, and postgresql i
 
 $python3 -m venv env
 
-$source env/bin/activa
+$source env/bin/activate
 
 $python get-pip.py
 
