@@ -14,7 +14,7 @@ Maxwell Baird, Ruby Rinken, Justin Corbin, Trond Makonese, DeMarcus Kirby
 
 ## Setup
 
-To setup the project you will need to have python 3.8, get-pip, and postgresql installed. After installing those apps you will pull down this repo. Then you will need to create a database callled dungeoncrawler using the username postgres. You will then need to follow the following commands:
+To setup the project you will need to have python 3.8, get-pip, and postgresql installed. After installing those apps you will pull down this repo. Then you will need to create a database callled dungeoncrawler using the username postgres. You will then need to use the following commands:
 
 $python3 -m venv env
 
